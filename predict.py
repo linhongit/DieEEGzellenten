@@ -6,8 +6,12 @@ import argparse
 from wettbewerb import EEGDataset
 
 # Laden des Modells und des Scalers
-model_path = '/home/jupyter-wki_team_2/Silvan/test_rf/random_forest_model.joblib'
-scaler_path = '/home/jupyter-wki_team_2/Silvan/test_rf/scaler.joblib'
+# Basisverzeichnis ermitteln (Verzeichnis des aktuellen Skripts)
+base_dir = os.path.dirname(__file__)
+
+# Pfade relativ zum Basisverzeichnis
+model_path = os.path.join(base_dir, 'random_forest_model.joblib')
+scaler_path = os.path.join(base_dir, 'scaler.joblib')
 model = joblib.load(model_path)
 scaler = joblib.load(scaler_path)
 
